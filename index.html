@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Cairo',sans-serif;
+direction: rtl;
+background:linear-gradient(135deg,#fdf0f5,#e8d5e8,#d8bfd8);
+color:#4a235a;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* Floating Hearts */
+
+.heart{
+position:fixed;
+bottom:-40px;
+font-size:20px;
+color:#9b59b6;
+animation:float 8s linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+color:#8e44ad;
+text-shadow:0 0 15px rgba(142,68,173,0.3);
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+color:#6c3483;
+}
+
+.cake-img {
+margin-bottom: 20px;
+animation: bounce 3s infinite ease-in-out;
+filter: drop-shadow(0 10px 15px rgba(142,68,173,0.3));
+}
+
+@keyframes bounce {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-15px); }
+}
+
+.boom {
+  animation: boom-anim 0.8s ease-out forwards !important;
+}
+
+@keyframes boom-anim {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.8; filter: brightness(2) blur(2px); }
+  100% { transform: scale(2.5); opacity: 0; filter: brightness(3) blur(10px); }
+}
+
+.countdown {
+display: flex;
+gap: 15px;
+justify-content: center;
+margin-top: 20px;
+flex-wrap: wrap;
+font-family: 'Cairo', sans-serif;
+}
+
+.time-box {
+background: rgba(255,255,255,0.4);
+padding: 15px 20px;
+border-radius: 15px;
+min-width: 90px;
+backdrop-filter: blur(10px);
+box-shadow: 0 0 20px rgba(142,68,173,.2);
+}
+
+.time-box span {
+display: block;
+font-size: 38px;
+font-weight: bold;
+color: #8e44ad;
+}
+
+.time-box p {
+font-size: 16px;
+color: #5b2c6f;
+margin: 0;
+font-weight: 600;
+}
+
+/* INFO SECTION */
+
+.info{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+padding:80px 10%;
+text-align:center;
+}
+
+.card{
+background:rgba(255,255,255,0.4);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px rgba(142,68,173,.2);
+width:260px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h2{
+font-family:'Great Vibes',cursive;
+font-size:34px;
+color:#8e44ad;
+margin-bottom:10px;
+}
+
+/* HER SECTION */
+
+.her{
+text-align:center;
+padding:80px 10%;
+}
+
+.her img{
+width:260px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(142,68,173,.3);
+margin-top:30px;
+}
+
+/* LOVE MESSAGE */
+
+.message{
+max-width:800px;
+margin:auto;
+text-align:center;
+padding:80px 10%;
+}
+
+.message h2{
+font-family:'Great Vibes',cursive;
+font-size:48px;
+color:#8e44ad;
+margin-bottom:20px;
+}
+
+.message p{
+line-height:1.8;
+font-size:18px;
+color:#5b2c6f;
+}
+
+/* GALLERY */
+
+.gallery{
+padding:80px 10%;
+}
+
+.gallery h2{
+text-align:center;
+font-family:'Great Vibes',cursive;
+font-size:48px;
+margin-bottom:40px;
+color:#8e44ad;
+}
+
+.photos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.photos img{
+width:100%;
+border-radius:15px;
+transition:.4s;
+box-shadow:0 10px 20px rgba(142,68,173,.2);
+}
+
+.photos img:hover{
+transform:scale(1.05);
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:40px;
+color:#8e44ad;
+}
+
+/* AUDIO SECTION */
+
+.audio-section {
+text-align: center;
+padding: 80px 10%;
+}
+
+.audio-section h2 {
+font-family: 'Cairo', sans-serif;
+font-size: 40px;
+color: #9b59b6;
+font-weight: 800;
+letter-spacing: 2px;
+margin-bottom: 5px;
+text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
+}
+
+.audio-section p {
+font-size: 16px;
+color: #c39bd3;
+margin-bottom: 40px;
+letter-spacing: 3px;
+text-transform: uppercase;
+}
+
+.audio-player-container {
+display: inline-block;
+background: #c39bd3;
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0 10px 20px rgba(142,68,173,.3);
+border: 4px solid #fff;
+width: 100%;
+max-width: 400px;
+}
+
+.audio-player-container svg {
+width: 100px;
+height: 100px;
+margin-bottom: 20px;
+filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+}
+
+custom-audio {
+width: 100%;
+border-radius: 30px;
+}
+
+audio {
+width: 100%;
+height: 40px;
+border-radius: 20px;
+}
+
+/* Customizing the default audio player a bit for webkit browsers */
+audio::-webkit-media-controls-panel {
+background-color: #fdf0f5;
+}
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+background-color: #e8d5e8;
+border-radius: 50%;
+}
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+color: #5b2c6f;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.audio-section h2 {
+font-size: 32px;
+}
+
+.countdown {
+gap: 10px;
+}
+
+.time-box {
+min-width: 70px;
+padding: 10px 15px;
+}
+
+.time-box span {
+font-size: 28px;
+}
+
+.time-box p {
+font-size: 14px;
+}
+
+.cake-img {
+width: 150px;
+height: 150px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div id="countdown-container">
+<svg width="220" height="220" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="cake-img">
+  <!-- Plate -->
+  <ellipse cx="100" cy="170" rx="90" ry="20" fill="#d8bfd8" />
+  <ellipse cx="100" cy="168" rx="85" ry="18" fill="#fdf0f5" />
+  
+  <!-- Cake Body -->
+  <path d="M 40 120 L 40 160 A 60 15 0 0 0 160 160 L 160 120 Z" fill="#9b59b6" />
+  <ellipse cx="100" cy="120" rx="60" ry="15" fill="#c39bd3" />
+
+  <!-- Frosting Drips -->
+  <path d="M 40 120 C 40 135, 55 140, 60 120 C 65 130, 75 135, 80 120 C 85 145, 100 150, 105 120 C 110 130, 125 135, 130 120 C 135 140, 150 145, 160 120 C 160 110, 40 110, 40 120" fill="#ebdef0" />
+
+  <!-- Candles -->
+  <rect x="55" y="85" width="8" height="35" rx="3" fill="#f39c12" />
+  <path d="M 59 65 Q 63 75 59 83 Q 55 75 59 65" fill="#f1c40f" />
+  
+  <rect x="75" y="75" width="8" height="42" rx="3" fill="#ff9ff3" />
+  <path d="M 79 55 Q 83 65 79 73 Q 75 65 79 55" fill="#f1c40f" />
+
+  <rect x="96" y="70" width="8" height="45" rx="3" fill="#48dbfb" />
+  <path d="M 100 50 Q 104 60 100 68 Q 96 60 100 50" fill="#f1c40f" />
+
+  <rect x="117" y="75" width="8" height="42" rx="3" fill="#1dd1a1" />
+  <path d="M 121 55 Q 125 65 121 73 Q 117 65 121 55" fill="#f1c40f" />
+
+  <rect x="137" y="85" width="8" height="35" rx="3" fill="#ff6b6b" />
+  <path d="M 141 65 Q 145 75 141 83 Q 137 75 141 65" fill="#f1c40f" />
+  
+  <!-- Wavy line -->
+  <path d="M 45 145 Q 55 135 65 145 T 85 145 T 105 145 T 125 145 T 145 145 T 155 140" fill="none" stroke="#e8d5e8" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<div class="countdown" id="countdown"></div>
+</div>
+
+</section>
+
+<div id="main-content" style="display: none;">
+
+<section class="hero" id="welcome-container">
+<h1>كل سنه وانت طيبة يا MY Wife 🎉</h1>
+<p>You are the most beautiful part of my life ( Rama )</p>
+</section>
+
+<!-- IMPORTANT DATES -->
+
+<section class="info">
+
+<div class="card">
+<h2>Our Story Began</h2>
+<p>5/1/2022</p>
+</div>
+
+<div class="card">
+<h2>Your Birthday</h2>
+<p>4/4/2009</p>
+</div>
+
+</section>
+
+
+
+<!-- MESSAGE -->
+
+<section class="message">
+
+<h2>A Message For You</h2>
+
+<p>
+كل سنة وأنتي طيبة يا أجمل حاجة حصلتلي في دنيتي..
+بجد أنا محظوظ جداً إنك في حياتي. كل يوم بيمر عليا وأنتي معايا بكتشف إني بحبك أكتر من اليوم اللي قبله. أنتي مش بس حبيبتي، أنتي ضحكتي، وراحتي، والمكان اللي بهرب ليه من الدنيا كلها.
+في يوم ميلادك، بتمنى من ربنا يخليكي ليا وميحرمنيش من وجودك ولا من ضحكتك اللي بتنورلي حياتي. يا رب السنة دي تكون سنة خير وسعادة عليكي، وتحققي فيها كل اللي بتحلمي بيه وأنا جنبك وسندك.
+بحبك فوق ما تتخيلي.. كل سنة وأنتي العيد بتاعي."
+</p>
+
+</section>
+
+</section>
+
+<!-- AUDIO SECTION -->
+
+<section class="audio-section">
+<h2>♥ THESE ARE FOR YOU ♥</h2>
+<p>Click to listen!</p>
+
+<div class="audio-player-container">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2Z" fill="#fdf0f5"/>
+    <path d="M10 15V9C10 8.52 10.53 8.22 10.92 8.44L16.05 11.44C16.43 11.66 16.43 12.34 16.05 12.56L10.92 15.56C10.53 15.78 10 15.48 10 15Z" fill="#9b59b6"/>
+    <path d="M14 5.5L15 4V4.5C16.1 4.5 17 5.4 17 6.5C17 7.6 16.1 8.5 15 8.5V7C15.28 7 15.5 6.78 15.5 6.5C15.5 6.22 15.28 6 15 6H14V5.5ZM19 6.5C19 8.71 17.21 10.5 15 10.5V9C16.38 9 17.5 7.88 17.5 6.5C17.5 5.12 16.38 4 15 4V2.5C17.21 2.5 19 4.29 19 6.5Z" fill="#fff" opacity="0.6"/>
+  </svg>
+  
+  <audio controls>
+    <source src="birth.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery">
+
+<h2>The Girl Who Owns My Heart</h2>
+
+<div class="photos">
+
+<img src="rere.jpeg">
+<img src="rere2.jpeg">
+<img src="rere3.jpeg">
+<img src="rere7.jpeg">
+
+</div>
+
+</section>
+
+<footer>
+
+Made with 💜 just for you
+
+</footer>
+
+</div>
+
+<script>
+
+const targetDate = new Date("2026-03-10T07:19:40").getTime();
+
+let exploded = false;
+let countdownAudioStarted = false;
+const countdownSound = new Audio("https://actions.google.com/sounds/v1/science_fiction/countdown.ogg");
+
+function triggerBoom() {
+  if (exploded) return;
+  exploded = true;
+
+  const cake = document.querySelector(".cake-img");
+  const countdownContainer = document.getElementById("countdown-container");
+  const mainContent = document.getElementById("main-content");
+
+  if (cake) {
+    cake.classList.add("boom");
+  }
+
+  // Heart burst effect
+  for (let i = 0; i < 50; i++) {
+    setTimeout(hearts, i * 30);
+  }
+
+  // After the animation finishes, hide countdown and show content
+  setTimeout(() => {
+    if (countdownContainer) countdownContainer.style.display = "none";
+    if (mainContent) {
+      mainContent.style.display = "block";
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, 1200); // Allow time for the boom animation
+}
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  // Play countdown sound 10 seconds before zero
+  if (distance <= 10500 && distance > 0 && !countdownAudioStarted) {
+    countdownAudioStarted = true;
+    countdownSound.play().catch(err => {
+        console.log("Audio playback was blocked. Click on the page to enable sound!");
+    });
+  }
+
+  if (distance <= 0) {
+    triggerBoom();
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  const countdownEl = document.getElementById("countdown");
+  if (countdownEl) {
+    countdownEl.innerHTML = `
+      <div class="time-box"><span>${days}</span><p>Days</p></div>
+      <div class="time-box"><span>${hours}</span><p>Hours</p></div>
+      <div class="time-box"><span>${minutes}</span><p>Minutes</p></div>
+      <div class="time-box"><span>${seconds}</span><p>Seconds</p></div>
+    `;
+  }
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+/* Floating hearts */
+
+function hearts(){
+
+const heart=document.createElement("div")
+heart.classList.add("heart")
+
+heart.innerHTML="💜"
+
+heart.style.left=Math.random()*100+"vw"
+heart.style.fontSize=(15+Math.random()*25)+"px"
+heart.style.animationDuration=(5+Math.random()*5)+"s"
+
+document.body.appendChild(heart)
+
+setTimeout(()=>{
+heart.remove()
+},8000)
+
+}
+
+setInterval(hearts,400)
+
+// Unlock audio on first user interaction
+document.body.addEventListener('click', () => {
+    countdownSound.play().then(() => {
+        countdownSound.pause();
+        countdownSound.currentTime = 0;
+    }).catch(e => {});
+}, { once: true });
+
+</script>
+
+</body>
+</html>
