@@ -1,570 +1,905 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>For My Love ❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Cairo',sans-serif;
-direction: rtl;
-background:linear-gradient(135deg,#fdf0f5,#e8d5e8,#d8bfd8);
-color:#4a235a;
-overflow-x:hidden;
-scroll-behavior:smooth;
-}
-
-/* Floating Hearts */
-
-.heart{
-position:fixed;
-bottom:-40px;
-font-size:20px;
-color:#9b59b6;
-animation:float 8s linear infinite;
-opacity:.7;
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-100%{transform:translateY(-120vh);}
-}
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-family:'Great Vibes',cursive;
-font-size:70px;
-color:#8e44ad;
-text-shadow:0 0 15px rgba(142,68,173,0.3);
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-color:#6c3483;
-}
-
-.cake-img {
-margin-bottom: 20px;
-animation: bounce 3s infinite ease-in-out;
-filter: drop-shadow(0 10px 15px rgba(142,68,173,0.3));
-}
-
-@keyframes bounce {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-15px); }
-}
-
-.boom {
-  animation: boom-anim 0.8s ease-out forwards !important;
-}
-
-@keyframes boom-anim {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.5); opacity: 0.8; filter: brightness(2) blur(2px); }
-  100% { transform: scale(2.5); opacity: 0; filter: brightness(3) blur(10px); }
-}
-
-.countdown {
-display: flex;
-gap: 15px;
-justify-content: center;
-margin-top: 20px;
-flex-wrap: wrap;
-font-family: 'Cairo', sans-serif;
-}
-
-.time-box {
-background: rgba(255,255,255,0.4);
-padding: 15px 20px;
-border-radius: 15px;
-min-width: 90px;
-backdrop-filter: blur(10px);
-box-shadow: 0 0 20px rgba(142,68,173,.2);
-}
-
-.time-box span {
-display: block;
-font-size: 38px;
-font-weight: bold;
-color: #8e44ad;
-}
-
-.time-box p {
-font-size: 16px;
-color: #5b2c6f;
-margin: 0;
-font-weight: 600;
-}
-
-/* INFO SECTION */
-
-.info{
-display:flex;
-justify-content:center;
-gap:60px;
-flex-wrap:wrap;
-padding:80px 10%;
-text-align:center;
-}
-
-.card{
-background:rgba(255,255,255,0.4);
-padding:30px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-box-shadow:0 0 25px rgba(142,68,173,.2);
-width:260px;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card h2{
-font-family:'Great Vibes',cursive;
-font-size:34px;
-color:#8e44ad;
-margin-bottom:10px;
-}
-
-/* HER SECTION */
-
-.her{
-text-align:center;
-padding:80px 10%;
-}
-
-.her img{
-width:260px;
-border-radius:20px;
-box-shadow:0 0 30px rgba(142,68,173,.3);
-margin-top:30px;
-}
-
-/* LOVE MESSAGE */
-
-.message{
-max-width:800px;
-margin:auto;
-text-align:center;
-padding:80px 10%;
-}
-
-.message h2{
-font-family:'Great Vibes',cursive;
-font-size:48px;
-color:#8e44ad;
-margin-bottom:20px;
-}
-
-.message p{
-line-height:1.8;
-font-size:18px;
-color:#5b2c6f;
-}
-
-/* GALLERY */
-
-.gallery{
-padding:80px 10%;
-}
-
-.gallery h2{
-text-align:center;
-font-family:'Great Vibes',cursive;
-font-size:48px;
-margin-bottom:40px;
-color:#8e44ad;
-}
-
-.photos{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
-}
-
-.photos img{
-width:100%;
-border-radius:15px;
-transition:.4s;
-box-shadow:0 10px 20px rgba(142,68,173,.2);
-}
-
-.photos img:hover{
-transform:scale(1.05);
-}
-
-/* Footer */
-
-footer{
-text-align:center;
-padding:40px;
-color:#8e44ad;
-}
-
-/* AUDIO SECTION */
-
-.audio-section {
-text-align: center;
-padding: 80px 10%;
-}
-
-.audio-section h2 {
-font-family: 'Cairo', sans-serif;
-font-size: 40px;
-color: #9b59b6;
-font-weight: 800;
-letter-spacing: 2px;
-margin-bottom: 5px;
-text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
-}
-
-.audio-section p {
-font-size: 16px;
-color: #c39bd3;
-margin-bottom: 40px;
-letter-spacing: 3px;
-text-transform: uppercase;
-}
-
-.audio-player-container {
-display: inline-block;
-background: #c39bd3;
-padding: 30px;
-border-radius: 20px;
-box-shadow: 0 10px 20px rgba(142,68,173,.3);
-border: 4px solid #fff;
-width: 100%;
-max-width: 400px;
-}
-
-.audio-player-container svg {
-width: 100px;
-height: 100px;
-margin-bottom: 20px;
-filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
-}
-
-custom-audio {
-width: 100%;
-border-radius: 30px;
-}
-
-audio {
-width: 100%;
-height: 40px;
-border-radius: 20px;
-}
-
-/* Customizing the default audio player a bit for webkit browsers */
-audio::-webkit-media-controls-panel {
-background-color: #fdf0f5;
-}
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-mute-button {
-background-color: #e8d5e8;
-border-radius: 50%;
-}
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display {
-color: #5b2c6f;
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:42px;
-}
-
-.audio-section h2 {
-font-size: 32px;
-}
-
-.countdown {
-gap: 10px;
-}
-
-.time-box {
-min-width: 70px;
-padding: 10px 15px;
-}
-
-.time-box span {
-font-size: 28px;
-}
-
-.time-box p {
-font-size: 14px;
-}
-
-.cake-img {
-width: 150px;
-height: 150px;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div id="countdown-container">
-<svg width="220" height="220" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="cake-img">
-  <!-- Plate -->
-  <ellipse cx="100" cy="170" rx="90" ry="20" fill="#d8bfd8" />
-  <ellipse cx="100" cy="168" rx="85" ry="18" fill="#fdf0f5" />
-  
-  <!-- Cake Body -->
-  <path d="M 40 120 L 40 160 A 60 15 0 0 0 160 160 L 160 120 Z" fill="#9b59b6" />
-  <ellipse cx="100" cy="120" rx="60" ry="15" fill="#c39bd3" />
-
-  <!-- Frosting Drips -->
-  <path d="M 40 120 C 40 135, 55 140, 60 120 C 65 130, 75 135, 80 120 C 85 145, 100 150, 105 120 C 110 130, 125 135, 130 120 C 135 140, 150 145, 160 120 C 160 110, 40 110, 40 120" fill="#ebdef0" />
-
-  <!-- Candles -->
-  <rect x="55" y="85" width="8" height="35" rx="3" fill="#f39c12" />
-  <path d="M 59 65 Q 63 75 59 83 Q 55 75 59 65" fill="#f1c40f" />
-  
-  <rect x="75" y="75" width="8" height="42" rx="3" fill="#ff9ff3" />
-  <path d="M 79 55 Q 83 65 79 73 Q 75 65 79 55" fill="#f1c40f" />
-
-  <rect x="96" y="70" width="8" height="45" rx="3" fill="#48dbfb" />
-  <path d="M 100 50 Q 104 60 100 68 Q 96 60 100 50" fill="#f1c40f" />
-
-  <rect x="117" y="75" width="8" height="42" rx="3" fill="#1dd1a1" />
-  <path d="M 121 55 Q 125 65 121 73 Q 117 65 121 55" fill="#f1c40f" />
-
-  <rect x="137" y="85" width="8" height="35" rx="3" fill="#ff6b6b" />
-  <path d="M 141 65 Q 145 75 141 83 Q 137 75 141 65" fill="#f1c40f" />
-  
-  <!-- Wavy line -->
-  <path d="M 45 145 Q 55 135 65 145 T 85 145 T 105 145 T 125 145 T 145 145 T 155 140" fill="none" stroke="#e8d5e8" stroke-width="3" stroke-linecap="round"/>
-</svg>
-<div class="countdown" id="countdown"></div>
-</div>
-
-</section>
-
-<div id="main-content" style="display: none;">
-
-<section class="hero" id="welcome-container">
-<h1>كل سنه وانت طيبة يا MY Wife 🎉</h1>
-<p>You are the most beautiful part of my life ( Rama )</p>
-</section>
-
-<!-- IMPORTANT DATES -->
-
-<section class="info">
-
-<div class="card">
-<h2>Our Story Began</h2>
-<p>5/1/2022</p>
-</div>
-
-<div class="card">
-<h2>Your Birthday</h2>
-<p>4/4/2009</p>
-</div>
-
-</section>
-
-
-
-<!-- MESSAGE -->
-
-<section class="message">
-
-<h2>A Message For You</h2>
-
-<p>
-كل سنة وأنتي طيبة يا أجمل حاجة حصلتلي في دنيتي..
-بجد أنا محظوظ جداً إنك في حياتي. كل يوم بيمر عليا وأنتي معايا بكتشف إني بحبك أكتر من اليوم اللي قبله. أنتي مش بس حبيبتي، أنتي ضحكتي، وراحتي، والمكان اللي بهرب ليه من الدنيا كلها.
-في يوم ميلادك، بتمنى من ربنا يخليكي ليا وميحرمنيش من وجودك ولا من ضحكتك اللي بتنورلي حياتي. يا رب السنة دي تكون سنة خير وسعادة عليكي، وتحققي فيها كل اللي بتحلمي بيه وأنا جنبك وسندك.
-بحبك فوق ما تتخيلي.. كل سنة وأنتي العيد بتاعي."
-</p>
-
-</section>
-
-</section>
-
-<!-- AUDIO SECTION -->
-
-<section class="audio-section">
-<h2>♥ THESE ARE FOR YOU ♥</h2>
-<p>Click to listen!</p>
-
-<div class="audio-player-container">
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2Z" fill="#fdf0f5"/>
-    <path d="M10 15V9C10 8.52 10.53 8.22 10.92 8.44L16.05 11.44C16.43 11.66 16.43 12.34 16.05 12.56L10.92 15.56C10.53 15.78 10 15.48 10 15Z" fill="#9b59b6"/>
-    <path d="M14 5.5L15 4V4.5C16.1 4.5 17 5.4 17 6.5C17 7.6 16.1 8.5 15 8.5V7C15.28 7 15.5 6.78 15.5 6.5C15.5 6.22 15.28 6 15 6H14V5.5ZM19 6.5C19 8.71 17.21 10.5 15 10.5V9C16.38 9 17.5 7.88 17.5 6.5C17.5 5.12 16.38 4 15 4V2.5C17.21 2.5 19 4.29 19 6.5Z" fill="#fff" opacity="0.6"/>
-  </svg>
-  
-  <audio controls>
-    <source src="birth.m4a" type="audio/mp4">
-    Your browser does not support the audio element.
-  </audio>
-</div>
-</section>
-
-<!-- GALLERY -->
-
-<section class="gallery">
-
-<h2>The Girl Who Owns My Heart</h2>
-
-<div class="photos">
-
-<img src="rere.jpeg">
-<img src="rere2.jpeg">
-<img src="rere3.jpeg">
-<img src="rere7.jpeg">
-
-</div>
-
-</section>
-
-<footer>
-
-Made with 💜 just for you
-
-</footer>
-
-</div>
-
-<script>
-
-const targetDate = new Date("2026-03-10T07:19:40").getTime();
-
-let exploded = false;
-let countdownAudioStarted = false;
-const countdownSound = new Audio("https://actions.google.com/sounds/v1/science_fiction/countdown.ogg");
-
-function triggerBoom() {
-  if (exploded) return;
-  exploded = true;
-
-  const cake = document.querySelector(".cake-img");
-  const countdownContainer = document.getElementById("countdown-container");
-  const mainContent = document.getElementById("main-content");
-
-  if (cake) {
-    cake.classList.add("boom");
-  }
-
-  // Heart burst effect
-  for (let i = 0; i < 50; i++) {
-    setTimeout(hearts, i * 30);
-  }
-
-  // After the animation finishes, hide countdown and show content
-  setTimeout(() => {
-    if (countdownContainer) countdownContainer.style.display = "none";
-    if (mainContent) {
-      mainContent.style.display = "block";
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kareem Moussa | Machine Learning Engineer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* تأثير الدخول التدريجي */
+    @keyframes entrance {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
-  }, 1200); // Allow time for the boom animation
+
+    .animate-entrance {
+        animation: entrance 0.8s ease-out forwards;
+    }
+
+    /* توقيتات التأخير */
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-500 { animation-delay: 0.5s; }
+    .delay-700 { animation-delay: 0.7s; }
+    .delay-1000 { animation-delay: 1s; }
+
+        /* Custom Animations & Styles */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stroke-text {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+        .animate-spin-slow {
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-5%); }
+            50% { transform: translateY(5%); }
+        }
+        
+        /* Selection Color */
+        ::selection {
+            background-color: #3b82f6; /* blue-500 */
+            color: black;
+        }
+
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+
+        /* Glitch effect wrapper (optional future enhancement) */
+        .cyber-border {
+            position: relative;
+        }
+        .cyber-border::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            border-radius: inherit;
+            background: linear-gradient(45deg, #3b82f6, transparent, #3b82f6);
+            z-index: -1;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="bg-black text-white selection:bg-blue-500 selection:text-black overflow-x-hidden">
+
+    <!-- Floating Pill Navbar -->
+    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+        <div class="bg-black/60 backdrop-blur-xl border border-white/10 rounded-full pl-6 pr-2 py-2 flex items-center justify-between w-full max-w-4xl shadow-2xl shadow-blue-900/5">
+            
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                <div class="w-10 h-10  rounded-full flex items-center justify-center text-blue-500 group-hover:text-black transition-colors">
+                   <img src="KM.svg" class="scale-[2.5] translate-x-6">
+                </div>
+                
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-1xl font-family text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="#skills" class="text-1xl font-family text-gray-400 hover:text-white transition-colors">Skills</a>
+                <a href="#projects" class="text-1xl font-family text-gray-400 hover:text-white transition-colors">Works</a>
+                <a href="#contact" class=" text-1xl font-family text-gray-400 hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:block bg-gradient-to-r from-blue-500 to-blue-600 text-black text-s font-bold px-6 py-2.5 rounded-full hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all transform hover:scale-105">
+                    Hire me!
+                </a>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2">
+                    <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 mt-4 bg-zinc-900/95 backdrop-blur-xl rounded-2xl p-6 flex flex-col space-y-4 border border-white/10 shadow-2xl text-center">
+                <a href="#about" class="text-gray-300 hover:text-blue-500 block py-2">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-blue-500 block py-2">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-blue-500 block py-2">Works</a>
+                <a href="#contact" class="text-gray-300 hover:text-blue-500 block py-2">Contact</a>
+                <a href="#contact" class="bg-blue-500 text-black font-bold px-6 py-3 rounded-full hover:bg-blue-400 inline-block mt-2">Hire me!</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-content" class="transition-opacity duration-500">
+        
+        <!-- Hero Section -->
+         
+        <section class="relative h-screen flex items-center pt-24 pb-16 md:pt-40 md:pb-32 bg-zinc-90 overflow-hidden mt-0">
+            <!-- Grid Background -->
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+
+
+            
+            <div class="max-w-7xl mx-auto px-22 relative z-10">
+
+                <div class="relative rounded-[5rem] border border-white/10
+                            bg-gradient-to-br from-white/5 to-white/0 
+                            backdrop-blur-3xl 
+                            shadow-2xl shadow-blue-600/10 
+                            p-20 md:p-20 mt-0 ">
+            
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+
+
+                <!-- Left Content -->
+                <div class="space-y-8 relative z-10">
+                    <div class="inline-flex items-center space-x-2 bg-zinc-900/50 border border-blue-600/30 rounded-full px-4 py-2 backdrop-blur-sm">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+                        </span>
+                        <span class="text-blue-500 font-mono font-bold tracking-wider uppercase text-xs">Available for Hire</span>
+                    </div>
+                    
+                    <div class="relative z-20">
+                        <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-[0.9] tracking-tight opacity-0 animate-entrance delay-300">
+                            I'M <br />
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500 opacity-0 animate-entrance delay-300">
+                                KAREEM
+                            </span><br/>
+                            <span class="text-blue-500 inline-block relative opacity-0 animate-entrance delay-300">
+                                MOUSSA
+                                <svg class="absolute w-full h-4 -bottom-2 left-0 text-blue-500 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
+                                </svg>
+                            </span>
+                        </h1>
+                    </div>
+                    
+                    <p class="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed font-light opacity-0 animate-entrance delay-300">
+                        Machine Learning Engineer dedicated to architecting scalable <span class="text-white font-semibold opacity-0 animate-entrance delay-300">AI solutions</span>. Based at <span class="text-blue-500 opacity-0 animate-entrance delay-300">Mansoura University</span>, transforming data into algorithmic precision.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#projects" class="group bg-blue-500 text-black px-8 py-4 rounded-xl font-bold hover:bg-blue-400 transition-all transform hover:scale-105 flex items-center shadow-[0_0_20px_rgba(59,130,246,0.4)] opacity-0 animate-entrance delay-300">
+                            View My Work
+                            <i data-lucide="arrow-up-right" class="ml-2 w-5 h-5 group-hover:rotate-45 transition-transform duration-300 "></i>
+                        </a>
+                        <a href="CV_V2.pdf" target="_blank" class="group bg-zinc-900 border border-zinc-800 text-white px-8 py-4 rounded-xl font-semibold hover:border-blue-500/50 hover:text-blue-500 transition-colors flex items-center opacity-0 animate-entrance delay-300">
+                            <i data-lucide="download" class="mr-2 w-4 h-4 group-hover:animate-bounce"></i>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="relative flex justify-center lg:justify-end items-center opacity-0 animate-entrance delay-300">
+                    <!-- Glow Effect -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+                    
+                    <!-- Tech Ring Animation -->
+                    <div class="absolute inset-0 border border-dashed border-blue-600/20 rounded-full animate-spin-slow w-full h-full scale-125 pointer-events-none"></div>
+
+                    <!-- Image Container -->
+                    <div class="relative z-10 w-full max-w-md">
+                        <div class="relative rounded-[2.5rem] overflow-hidden border-2 border-zinc-800 bg-zinc-900/50">
+                            <img 
+                                src="me2.png" 
+                                alt="Kareem Moussa" 
+                                class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform"
+                            />
+                            
+                            <!-- Overlay Gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+
+                            <!-- Floating Badges -->
+                            <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                                <div>
+                                    <p class="text-blue-500 font-mono text-xs mb-1 opacity-0 animate-entrance delay-300">CURRENTLY</p>
+                                    <p class="text-white font-bold text-lg opacity-0 animate-entrance delay-300">FCIS Student</p>
+                                </div>
+                                <div class="bg-blue-500 p-3 rounded-full text-black">
+                                    <i data-lucide="brain-circuit" class="w-6 h-6 "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Info Banner -->
+<section class="bg-black py-20 relative">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="relative rounded-[3rem] border border-white/10 bg-gradient-to-br from-zinc-900/60 to-zinc-800/30 backdrop-blur-xl p-10 shadow-2xl shadow-blue-900/20">
+
+            <!-- Glow background -->
+            <div class="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/20 blur-3xl rounded-full pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
+
+                <!-- Card -->
+                <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
+    <div class="flex -space-x-3 mb-4 group-hover:space-x-2 transition-all duration-300">
+        <img src="MU.png" alt="Kareem 1" class="w-10 h-10 rounded-full border-2 border-black object-cover group-hover:scale-110 transition-transform">
+        <img src="FCIS.jpeg" alt="Kareem 2" class="w-10 h-10 rounded-full border-2 border-black object-cover group-hover:scale-110 transition-transform">
+    </div>
+    
+    <p class="text-gray-500 text-xs font-mono uppercase mb-1">Education</p>
+    <p class="text-white font-bold text-lg">FCIS Mansoura</p>
+</div>
+
+                <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
+                    <i data-lucide="star" class="text-blue-500 w-8 h-8 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">Level / Grade</p>
+                    <p class="text-white font-bold text-lg">2 / Excellent</p>
+                </div>
+
+                <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
+                    <i data-lucide="calendar" class="text-blue-500 w-8 h-8 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">Birth</p>
+                    <p class="text-white font-bold text-lg">20 Aug 2006</p>
+                </div>
+
+                <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
+                    <i data-lucide="map-pin" class="text-blue-500 w-8 h-8 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">City</p>
+                    <p class="text-white font-bold text-lg">Mansoura</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- About Section -->
+    
+<!-- ABOUT ME SECTION -->
+<section id="about" class="relative py-28 bg-black overflow-hidden">
+
+
+
+
+    <!-- Soft Lime Glow Background -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 
+                w-[700px] h-[700px] 
+                bg-blue-500/10 blur-[140px] 
+                rounded-full pointer-events-none animate-pulse">
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+            <h2 class="inline-block text-2xl md:text-3xl font-semibold 
+                       tracking-widest uppercase 
+                       text-blue-500 relative">
+
+                About Me
+
+                <span class="absolute left-1/2 -translate-x-1/2 -bottom-2 
+                             w-16 h-[2px] 
+                             bg-gradient-to-r from-transparent via-blue-500 to-transparent 
+                             blur-sm">
+                </span>
+
+            </h2>
+        </div>
+
+        <!-- Glass Card -->
+        <div class="grid md:grid-cols-2 gap-14 items-center 
+                    p-12 rounded-3xl 
+                    border border-white/10 
+                    bg-gradient-to-br from-white/5 to-white/0 
+                    backdrop-blur-2xl 
+                    shadow-2xl shadow-blue-600/10 
+                    opacity-0 animate-fadeUp">
+
+            <!-- Left Content -->
+            <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+
+                <p>
+                    I am a Machine Learning Engineering Student at FCIS Mansoura and a DEPI Microsoft ML Trainee.
+                     My focus is on turning complex datasets into actionable intelligence
+                </p>
+
+                <p>
+                    I specialize in the full data lifecycle—from performing deep EDA and feature engineering to architecting high-accuracy Predictive Models with Scikit-learn,
+                     recently achieving 99% accuracy in diagnostic classification projects.
+                </p>
+
+                <p class="text-blue-500 font-medium">
+                    Always learning. Always building.
+                </p>
+
+            </div>
+
+            <!-- Right Stats -->
+            <div class="grid gap-6">
+
+                <div class="p-6 rounded-2xl 
+                            bg-white/5 border border-white/10 
+                            backdrop-blur-xl 
+                            hover:border-blue-500/40 
+                            hover:scale-105
+                            transition duration-500">
+
+                    <h3 class="text-3xl font-bold text-blue-500">
+                        1+
+                    </h3>
+                    <p class="text-gray-400 mt-2">
+                        Year Experience
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl 
+                            bg-white/5 border border-white/10 
+                            backdrop-blur-xl 
+                            hover:border-blue-500/40 
+                            hover:scale-105
+                            transition duration-500">
+
+                    <h3 class="text-3xl font-bold text-blue-500">
+                        2
+                    </h3>
+                    <p class="text-gray-400 mt-2">
+                        Projects Completed
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Animation -->
+<style>
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+.animate-fadeUp {
+    animation: fadeUp 1s ease forwards;
+}
+</style>
 
-  // Play countdown sound 10 seconds before zero
-  if (distance <= 10500 && distance > 0 && !countdownAudioStarted) {
-    countdownAudioStarted = true;
-    countdownSound.play().catch(err => {
-        console.log("Audio playback was blocked. Click on the page to enable sound!");
-    });
-  }
-
-  if (distance <= 0) {
-    triggerBoom();
-    return;
-  }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  const countdownEl = document.getElementById("countdown");
-  if (countdownEl) {
-    countdownEl.innerHTML = `
-      <div class="time-box"><span>${days}</span><p>Days</p></div>
-      <div class="time-box"><span>${hours}</span><p>Hours</p></div>
-      <div class="time-box"><span>${minutes}</span><p>Minutes</p></div>
-      <div class="time-box"><span>${seconds}</span><p>Seconds</p></div>
-    `;
-  }
+<!-- Custom Animation -->
+<style>
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-/* Floating hearts */
-
-function hearts(){
-
-const heart=document.createElement("div")
-heart.classList.add("heart")
-
-heart.innerHTML="💜"
-
-heart.style.left=Math.random()*100+"vw"
-heart.style.fontSize=(15+Math.random()*25)+"px"
-heart.style.animationDuration=(5+Math.random()*5)+"s"
-
-document.body.appendChild(heart)
-
-setTimeout(()=>{
-heart.remove()
-},8000)
-
+.animate-fadeUp {
+    animation: fadeUp 1s ease forwards;
 }
 
-setInterval(hearts,400)
+.delay-200 {
+    animation-delay: 0.2s;
+}
+</style>
 
-// Unlock audio on first user interaction
-document.body.addEventListener('click', () => {
-    countdownSound.play().then(() => {
-        countdownSound.pause();
-        countdownSound.currentTime = 0;
-    }).catch(e => {});
-}, { once: true });
+        <!-- Skills Section -->
+        <!-- SKILLS SECTION -->
+<section id="skills" class="relative py-28 bg-black overflow-hidden">
 
-</script>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
 
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+            <h2 class="inline-block text-2xl md:text-3xl font-semibold 
+                       tracking-widest uppercase 
+                       text-blue-500 relative">
+
+                Skills
+                <span class="absolute left-1/2 -translate-x-1/2 -bottom-2 
+                             w-16 h-[2px] 
+                             bg-gradient-to-r from-transparent via-blue-500 to-transparent 
+                             blur-sm">
+                </span>
+
+            </h2>
+        </div>
+        <!-- Skills Stack Layout -->
+        <div class="flex flex-col gap-8 max-w-5xl mx-auto">
+
+            <!-- EDA Row -->
+            <div class="relative bg-white/5 backdrop-blur-2xl px-8 py-10 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between border border-blue-500/40 shadow-2xl shadow-blue-600/10 transition-all overflow-hidden group hover:border-blue-500/60 hover:shadow-blue-600/20">
+                <!-- Hover Glow -->
+                <div class="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-blue-500/5 to-transparent blur-2xl opacity-100 transition-opacity pointer-events-none"></div>
+                
+                <!-- Left: Icons (Circles) -->
+                <div class="flex flex-wrap gap-4 relative z-10 mb-6 md:mb-0">
+                    <div class="w-20 h-20 rounded-full bg-black/60 border border-white/10 flex items-center justify-center p-4 shadow-inner hover:-translate-y-1 transition-transform">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="Numpy" class="w-full h-full object-contain">
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-black/60 border border-white/10 flex items-center justify-center p-4 shadow-inner hover:-translate-y-1 transition-transform">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="w-full h-full object-contain">
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-black/60 border border-white/10 flex items-center justify-center p-4 shadow-inner hover:-translate-y-1 transition-transform">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" class="w-full h-full object-contain">
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-black/60 border border-white/10 flex items-center justify-center p-4 shadow-inner hover:-translate-y-1 transition-transform">
+                        <img src="https://cdn.worldvectorlogo.com/logos/seaborn-1.svg" alt="Seaborn" class="w-full h-full object-contain">
+                    </div>
+                </div>
+
+                <!-- Right: Label -->
+                <h3 class="text-2xl md:text-3xl font-semibold relative z-10 tracking-[0.2em] text-white/90 text-right uppercase">Exploratory Data Analysis</h3>
+            </div>
+
+            <!-- ML Row -->
+            <div class="relative bg-white/5 backdrop-blur-2xl px-8 py-10 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between border border-blue-500/40 shadow-2xl shadow-blue-600/10 transition-all overflow-hidden group hover:border-blue-500/60 hover:shadow-blue-600/20">
+                <div class="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-blue-500/5 to-transparent blur-2xl opacity-100 transition-opacity pointer-events-none"></div>
+                
+                <div class="flex flex-wrap gap-4 relative z-10 mb-6 md:mb-0">
+                    <div class="w-20 h-20 rounded-full bg-black/60 border border-white/10 flex items-center justify-center p-4 shadow-inner hover:-translate-y-1 transition-transform">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-full h-full object-contain">
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-black/60 border border-white/10 flex items-center justify-center p-4 shadow-inner hover:-translate-y-1 transition-transform">
+                        <img src="https://icon.icepanel.io/Technology/svg/scikit-learn.svg" alt="Scikit-learn" class="w-full h-full object-contain">
+                    </div>
+                </div>
+
+                <h3 class="text-2xl md:text-3xl font-semibold relative z-10 tracking-[0.2em] text-white/90 text-right uppercase">Machine Learning</h3>
+            </div>
+
+            <!-- DL Row -->
+            <div class="relative bg-white/5 backdrop-blur-2xl px-8 py-10 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between border border-blue-500/40 shadow-2xl shadow-blue-600/10 transition-all overflow-hidden group hover:border-blue-500/60 hover:shadow-blue-600/20">
+                <div class="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-blue-500/5 to-transparent blur-2xl opacity-100 transition-opacity pointer-events-none"></div>
+                
+                <div class="flex flex-wrap gap-4 relative z-10 mb-6 md:mb-0">
+                    <!-- Standard DL tools added to complete the 3-row layout -->
+                    <div class="w-20 h-20 rounded-full bg-black/60 border border-white/10 flex items-center justify-center p-4 shadow-inner hover:-translate-y-1 transition-transform">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="w-full h-full object-contain">
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-black/60 border border-white/10 flex items-center justify-center p-4 shadow-inner hover:-translate-y-1 transition-transform">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="w-full h-full object-contain">
+                    </div>
+                </div>
+
+                <h3 class="text-2xl md:text-3xl font-semibold relative z-10 tracking-[0.2em] text-white/90 text-right uppercase">Deep Learning</h3>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- Projects Section (Interactive Cards) -->
+        <section id="projects" class="bg-zinc-950 py-24 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mt-4">
+                            Projects<br />
+                            <!-- <span class="text-gray-500">.</span> -->
+                        </h2>
+                    </div>
+                    <a href="https://github.com" target="_blank" class="hidden md:flex items-center text-white border border-white/20 px-6 py-3 rounded-full hover:bg-blue-500 hover:text-black hover:border-blue-500 transition-all group">
+                        View All Code <i data-lucide="github" class="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1 Card -->
+                    <div onclick="openProject(0)" class="group cursor-pointer bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20 flex flex-col h-full">
+                        <div class="h-64 w-full relative overflow-hidden">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/RMS_Titanic_3.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-6">
+                                <span class="bg-blue-500 text-black text-xs font-bold px-2 py-1 rounded uppercase">Classification</span>
+                            </div>
+                        </div>
+                        <div class="p-8 relative flex-grow flex flex-col">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-blue-500 transition-colors">Titanic Survival Prediction</h3>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-blue-500 group-hover:text-black group-hover:border-blue-500 transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 text-sm line-clamp-2 mb-6">Predicting passenger survival on the Titanic using Machine Learning algorithms.</p>
+                            
+                            <!-- Tech Stack & Metrics -->
+                            <div class="mt-auto space-y-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 text-gray-300 font-medium px-3 py-1.5 rounded-full border border-white/10 shadow-sm backdrop-blur-sm">Python</span>
+                                    <span class="text-xs bg-white/5 text-gray-300 font-medium px-3 py-1.5 rounded-full border border-white/10 shadow-sm backdrop-blur-sm">Logistic Regression</span>
+                                    <span class="text-xs bg-white/5 text-gray-300 font-medium px-3 py-1.5 rounded-full border border-white/10 shadow-sm backdrop-blur-sm">Scikit-Learn</span>
+                                </div>
+                                <div class="pt-4 border-t border-white/10 flex justify-between text-xs font-mono">
+                                    <span class="text-blue-500 text-xl">Accuracy: 85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 Card -->
+                    <div onclick="openProject(1)" class="group cursor-pointer bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20 flex flex-col h-full">
+                        <div class="h-64 w-full relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-6">
+                                <span class="bg-blue-500 text-black text-xs font-bold px-2 py-1 rounded uppercase">Medical AI</span>
+                            </div>
+                        </div>
+                        <div class="p-8 relative flex-grow flex flex-col">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-blue-500 transition-colors">Breast Cancer Detection</h3>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-blue-500 group-hover:text-black group-hover:border-blue-500 transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 text-sm line-clamp-2 mb-6">Diagnosing malignant tumors from cell nuclei measurements using Logistic Regression.</p>
+                            
+                            <!-- Tech Stack & Metrics -->
+                            <div class="mt-auto space-y-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 text-gray-300 font-medium px-3 py-1.5 rounded-full border border-white/10 shadow-sm backdrop-blur-sm">Python</span>
+                                    <span class="text-xs bg-white/5 text-gray-300 font-medium px-3 py-1.5 rounded-full border border-white/10 shadow-sm backdrop-blur-sm">Logistic Regression</span>
+                                    <span class="text-xs bg-white/5 text-gray-300 font-medium px-3 py-1.5 rounded-full border border-white/10 shadow-sm backdrop-blur-sm">Pandas</span>
+                                </div>
+                                <div class="pt-4 border-t border-white/10 flex justify-between text-xs font-mono">
+                                    <span class="text-blue-500 text-xl">Accuracy: 98%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="bg-black pt-20 pb-10 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="bg-zinc-900/50 border border-white/5 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+
+                    <div class="relative z-10 max-w-lg text-center md:text-left mb-10 md:mb-0">
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Let's build something <span class="text-blue-500">intelligent.</span></h2>
+                        <p class="text-gray-400 mb-8">Open to internships and collaborative ML projects.</p>
+                        <p class="text-blue-500 font-mono">Let's connect!</p>
+                    </div>
+
+                    <div class="relative z-10 flex space-x-4">
+                        <a href="https://www.linkedin.com/in/kareem-mohamed-633302346/" class="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center hover:bg-blue-500 hover:text-black hover:border-blue-500 transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="https://github.com/karim123855" class="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center hover:bg-blue-500 hover:text-black hover:border-blue-500 transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+                        <a href="https://www.facebook.com/karim.mohamed.311129" class="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center hover:bg-blue-500 hover:text-black hover:border-blue-500 transition-all"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="https://wa.me/201099941867?text=Hi%20Kareem,%20I%20saw%20your%20ML%20portfolio!" class="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center hover:bg-blue-500 hover:text-black hover:border-blue-500 transition-all"><i data-lucide="phone" class="w-5 h-5"></i></a>
+                        <a href="mailto:kmr762038@gmail.com?subject=ML%20Project%20Inquiry" class="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center hover:bg-blue-500 hover:text-black hover:border-blue-500 transition-all"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center text-gray-500 text-sm font-mono">
+                    <p>&copy; 2026 Kareem Moussa. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- PROJECT DETAIL MODAL (Overlay) -->
+    <div id="project-modal" class="fixed inset-0 z-[100] bg-black hidden overflow-y-auto backdrop-blur-sm bg-black/90">
+        <!-- Close Button (X) -->
+        <button onclick="closeProject()" class="fixed top-6 right-6 z-[120] bg-zinc-900 border border-white/20 text-white p-3 rounded-full hover:bg-blue-500 hover:text-black transition-all group">
+            <i data-lucide="x" class="w-6 h-6 group-hover:rotate-90 transition-transform duration-300"></i>
+        </button>
+
+        <!-- Project Content Container -->
+        <div class="min-h-screen relative">
+            <!-- Hero Image -->
+            <div class="h-[50vh] w-full relative">
+                <img id="modal-image" src="" alt="Project Cover" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black"></div>
+                
+                <!-- Back Button IN Modal Hero -->
+                <button onclick="closeProject()" class="absolute top-6 left-6 z-[120] flex items-center space-x-2 text-white/80 hover:text-blue-500 transition-colors bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    <span class="font-mono text-sm font-bold">Back to Home</span>
+                </button>
+
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 max-w-7xl mx-auto">
+                    <span id="modal-domain" class="bg-blue-500 text-black px-3 py-1 rounded text-sm font-bold uppercase tracking-wider mb-4 inline-block"></span>
+                    <h1 id="modal-title" class="text-4xl md:text-6xl font-bold text-white mb-4"></h1>
+                </div>
+            </div>
+
+            <!-- Content Body -->
+            <div class="max-w-4xl mx-auto px-6 py-12">
+                
+                <!-- Quick Stats Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-b border-white/10 pb-12">
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase mb-1">Timeline</p>
+                        <p class="text-white font-semibold">2 Days</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase mb-1">Role</p>
+                        <p class="text-white font-mono">ML Engineer</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase mb-1">Status</p>
+                        <p class="text-blue-500 font-mono">Completed</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-col space-y-2">
+                            <a href="#" class="text-white hover:text-blue-500 flex items-center transition-colors">
+                                <i data-lucide="github" class="w-5 h-5 mr-2"></i> Source Code
+                            </a>
+                            <a href="#" class="text-white hover:text-blue-500 flex items-center transition-colors">
+                                <i data-lucide="external-link" class="w-5 h-5 mr-2"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Description -->
+                <div class="space-y-12">
+                    
+                    <!-- The Challenge -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <i data-lucide="target" class="text-blue-500 mr-3 w-6 h-6"></i> The Goal
+                        </h3>
+                        <p id="modal-goal" class="text-gray-300 leading-relaxed text-lg"></p>
+                    </div>
+
+                    <!-- Methodology -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <i data-lucide="git-branch" class="text-blue-500 mr-3 w-6 h-6"></i> Methodology & Workflow
+                        </h3>
+                        <p id="modal-methodology" class="text-gray-300 leading-relaxed text-lg"></p>
+                    </div>
+
+                    <!-- Pipeline/Tech -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <i data-lucide="layers" class="text-blue-500 mr-3 w-6 h-6"></i> The Pipeline
+                        </h3>
+                        <div id="modal-tech" class="flex flex-wrap gap-3">
+                            <!-- Tags injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Metrics/Result -->
+                    <div class="bg-zinc-900 border border-white/10 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <i data-lucide="bar-chart-3" class="text-blue-500 mr-3 w-6 h-6"></i> Performance Metrics
+                        </h3>
+                        <div id="modal-metrics" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Metrics injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Gallery -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <i data-lucide="image" class="text-blue-500 mr-3 w-6 h-6"></i> Gallery
+                        </h3>
+                        <div id="modal-gallery" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Gallery images injected by JS -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        // --- PROJECT DATA & MODAL LOGIC ---
+        
+        const projectsData = [
+            {
+                title: "Titanic Survival Prediction",
+                domain: "Classification",
+                image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/RMS_Titanic_3.jpg",
+                goal: "The objective was to analyze passenger data (age, gender, ticket class, etc.) and build a predictive model to determine who was more likely to survive the infamous Titanic disaster.",
+                methodology: "The workflow began with Exploratory Data Analysis (EDA), specifically checking survival rates among men versus women. We then handled missing values (nulls) in crucial columns like Age and Cabin. Finally, features were encoded and mapped before a Logistic Regression model was trained and evaluated to baseline our predictions.",
+                tech: ["Python", "Logistic Regression", "Scikit-Learn", "Feature Engineering", "Pandas", "Matplotlib"],
+                metrics: [
+                    { label: "Accuracy", value: "85%" },
+                    { label: "F1 Score", value: "0.83" }
+                ],
+                gallery: [
+                    "https://images.unsplash.com/photo-1544365558-35aa4afcf11f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", 
+                    "https://upload.wikimedia.org/wikipedia/commons/4/4e/Titanic_in_color.png",
+                    "https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                ]
+            },
+            {
+                title: "Breast Cancer Detection",
+                domain: "Medical AI",
+                image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                goal: "To develop a highly accurate classification model capable of distinguishing between malignant and benign breast tumors based on cell nuclei measurements from digitized images of fine needle aspirates (FNA).",
+                methodology: "Data preprocessing was critical; we standardized various measurements of cell nuclei to ensure distance-based metrics functioned properly. After confirming data integrity, we deployed a robust Logistic Regression classifier capable of achieving near-perfect recall for malignant tumor detection.",
+                tech: ["Python", "Logistic Regression", "SVM", "Scikit-Learn", "Data Preprocessing"],
+                metrics: [
+                    { label: "Accuracy", value: "98%" },
+                    { label: "Recall", value: "0.99" }
+                ],
+                gallery: [
+                    "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1584362917165-526a968579e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                ]
+            }
+        ];
+
+        const mainContent = document.getElementById('main-content');
+        const projectModal = document.getElementById('project-modal');
+
+        // Elements to update in modal
+        const modalTitle = document.getElementById('modal-title');
+        const modalDomain = document.getElementById('modal-domain');
+        const modalImage = document.getElementById('modal-image');
+        const modalGoal = document.getElementById('modal-goal');
+        const modalMethodology = document.getElementById('modal-methodology');
+        const modalTech = document.getElementById('modal-tech');
+        const modalMetrics = document.getElementById('modal-metrics');
+        const modalGallery = document.getElementById('modal-gallery');
+
+        function openProject(index) {
+            const project = projectsData[index];
+            
+            // Populate Data
+            modalTitle.innerText = project.title;
+            modalDomain.innerText = project.domain;
+            modalImage.src = project.image;
+            modalGoal.innerText = project.goal;
+            modalMethodology.innerText = project.methodology;
+            
+            // Clear & Populate Tech Tags
+            modalTech.innerHTML = '';
+            project.tech.forEach(tech => {
+                const span = document.createElement('span');
+                span.className = 'text-xs bg-white/5 text-gray-300 font-medium px-3 py-1.5 rounded-full border border-white/10 shadow-sm backdrop-blur-sm';
+                span.innerText = tech;
+                modalTech.appendChild(span);
+            });
+
+            // Clear & Populate Metrics
+            modalMetrics.innerHTML = '';
+            project.metrics.forEach(metric => {
+                const div = document.createElement('div');
+                div.className = 'flex flex-col';
+                div.innerHTML = `
+                    <span class="text-gray-400 text-sm mb-1">${metric.label}</span>
+                    <span class="text-3xl font-mono text-white">${metric.value}</span>
+                `;
+                modalMetrics.appendChild(div);
+            });
+
+            // Clear & Populate Gallery
+            modalGallery.innerHTML = '';
+            if (project.gallery && project.gallery.length > 0) {
+                modalGallery.parentElement.classList.remove('hidden'); // Ensure gallery section is visible
+                project.gallery.forEach(imgUrl => {
+                    const img = document.createElement('img');
+                    img.src = imgUrl;
+                    img.className = 'w-full aspect-video object-cover rounded-xl border border-white/10 hover:border-blue-500/50 transition-colors shadow-lg';
+                    modalGallery.appendChild(img);
+                });
+            } else {
+                 modalGallery.parentElement.classList.add('hidden'); // Hide completely if no gallery
+            }
+
+            // Show Modal & Hide Scroll on Body
+            projectModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Re-run icons for the modal content
+            lucide.createIcons();
+        }
+
+        function closeProject() {
+            projectModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on Escape key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeProject();
+            }
+        });
+
+        // Cursor Light Logic
+        const cursorLight = document.getElementById('cursor-light');
+        document.addEventListener('mousemove', (e) => {
+            cursorLight.style.left = e.clientX + 'px';
+            cursorLight.style.top = e.clientY + 'px';
+        });
+        // Only show cursor light on mouse movement (avoids showing at 0,0 on mobile)
+        document.addEventListener('mousemove', () => cursorLight.style.display = 'block', { once: true });
+    </script>
+
+    <!-- Cursor Follow Light -->
+    <div id="cursor-light" class="fixed w-4 h-4 rounded-full bg-blue-500 blur-[2px] pointer-events-none z-[9999] opacity-80" style="transform: translate(-50%, -50%); display: none; transition: transform 0.05s ease-out;"></div>
 </body>
 </html>
